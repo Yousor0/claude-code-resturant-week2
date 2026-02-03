@@ -1,0 +1,98 @@
+.menu-section {
+  background: #0f0f0f;
+}
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.menu-tab {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #aaa;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.menu-tab:hover {
+  border-color: #C41E24;
+  color: #fff;
+}
+
+.menu-tab.active {
+  background: #C41E24;
+  border-color: #C41E24;
+  color: #fff;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.menu-item {
+  background: #1a1a1a;
+  padding: 1.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: border-color 0.3s;
+}
+
+.menu-item:hover {
+  border-color: rgba(196, 30, 36, 0.3);
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+}
+
+.menu-item-header h3 {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.menu-price {
+  color: #F5C518;
+  font-weight: 600;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+
+.menu-item p {
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-tabs {
+    gap: 0.5rem;
+  }
+
+  .menu-tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,145 @@
+/* Story Section */
+.story-section {
+  background: #111;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.story-text p {
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+.story-image .image-placeholder {
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  border: 2px solid rgba(196, 30, 36, 0.3);
+}
+
+/* Chef Section */
+.chef-section {
+  background: #0f0f0f;
+}
+
+.chef-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.chef-portrait {
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  border: 2px solid rgba(245, 197, 24, 0.3);
+}
+
+.chef-title-role {
+  font-family: 'Inter', sans-serif;
+  color: #F5C518;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.chef-text p {
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.chef-quote {
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid #C41E24;
+}
+
+.chef-quote blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: #ddd;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.chef-quote cite {
+  color: #F5C518;
+  font-size: 0.9rem;
+  font-style: normal;
+}
+
+/* Values */
+.values-section {
+  background: #111;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.value-card {
+  background: #1a1a1a;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: border-color 0.3s;
+}
+
+.value-card:hover {
+  border-color: rgba(196, 30, 36, 0.3);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  color: #F5C518;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+}
+
+.value-card p {
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .story-grid,
+  .chef-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chef-portrait {
+    height: 350px;
+  }
+}

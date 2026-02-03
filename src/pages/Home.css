@@ -1,0 +1,238 @@
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=1400&q=80') center/cover no-repeat;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 2rem;
+  max-width: 700px;
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #F5C518;
+  margin-bottom: 0.75rem;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-divider::before,
+.hero-divider::after {
+  content: '';
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(to right, transparent, #C41E24);
+}
+
+.hero-divider::after {
+  background: linear-gradient(to left, transparent, #C41E24);
+}
+
+.divider-icon {
+  font-size: 1.5rem;
+  color: #F5C518;
+}
+
+.hero-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* About Preview */
+.about-preview {
+  background: #111;
+}
+
+.about-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-preview-image .image-placeholder {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  border: 2px solid rgba(196, 30, 36, 0.3);
+}
+
+.about-preview-text h2 {
+  margin-bottom: 1.5rem;
+}
+
+.about-preview-text p {
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+.about-preview-text .btn {
+  margin-top: 0.5rem;
+}
+
+/* Signature Dishes */
+.signature-dishes {
+  background: #0f0f0f;
+}
+
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.dish-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.dish-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(196, 30, 36, 0.4);
+}
+
+.dish-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+
+.dish-info {
+  padding: 1.5rem;
+}
+
+.dish-info h3 {
+  font-family: 'Playfair Display', serif;
+  color: #F5C518;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.dish-info p {
+  color: #999;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Hours Section */
+.hours-section {
+  background: #111;
+}
+
+.hours-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 3rem;
+  border: 1px solid rgba(196, 30, 36, 0.2);
+}
+
+.hours-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.hours-block h3 {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1.25rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+.hours-block p {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.hours-phone {
+  font-size: 1.2rem !important;
+  color: #F5C518 !important;
+  font-weight: 600;
+  margin: 1rem 0 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .about-preview-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .dishes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hours-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hours-card {
+    padding: 2rem;
+  }
+}
