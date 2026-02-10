@@ -3,7 +3,7 @@ import "./About.css";
 function About() {
   return (
     <div className="about-page">
-      <section className="page-hero">
+      <section className="page-hero" style={{ backgroundImage: 'url(/images/hero-about.jpg)' }}>
         <div className="page-hero-overlay"></div>
         <div className="page-hero-content">
           <h1>Our Story</h1>

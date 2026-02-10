@@ -131,13 +131,16 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, #1a0a0a 0%, #0f0f0f 50%, #1a1005 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0f0f0f;
 }
 
 .page-hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 120%, rgba(196, 30, 36, 0.15) 0%, transparent 60%);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .page-hero-content {

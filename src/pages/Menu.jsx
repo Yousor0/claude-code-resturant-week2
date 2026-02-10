@@ -50,7 +50,7 @@ function Menu() {
 
   return (
     <div className="menu-page">
-      <section className="page-hero">
+      <section className="page-hero" style={{ backgroundImage: 'url(/images/hero-menu.jpg)' }}>
         <div className="page-hero-overlay"></div>
         <div className="page-hero-content">
           <h1>Our Menu</h1>

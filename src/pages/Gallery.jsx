@@ -78,7 +78,7 @@ function Gallery() {
 
   return (
     <div className="gallery-page">
-      <section className="page-hero">
+      <section className="page-hero" style={{ backgroundImage: 'url(/images/hero-gallery.jpg)' }}>
         <div className="page-hero-overlay"></div>
         <div className="page-hero-content">
           <h1>Gallery</h1>

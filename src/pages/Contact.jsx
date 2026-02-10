@@ -28,7 +28,7 @@ function Contact() {
 
   return (
     <div className="contact-page">
-      <section className="page-hero">
+      <section className="page-hero" style={{ backgroundImage: 'url(/images/hero-contact.jpg)' }}>
         <div className="page-hero-overlay"></div>
         <div className="page-hero-content">
           <h1>Contact Us</h1>
