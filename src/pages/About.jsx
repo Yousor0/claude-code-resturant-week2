@@ -45,8 +45,7 @@ function About() {
               <div
                 className="image-placeholder"
                 style={{
-                  backgroundImage:
-                    "url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80)",
+                  backgroundImage: "url(/images/about-restaurant.jpg)",
                 }}
               ></div>
             </div>
@@ -62,8 +61,7 @@ function About() {
               <div
                 className="image-placeholder chef-portrait"
                 style={{
-                  backgroundImage:
-                    "url(https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=500&q=80)",
+                  backgroundImage: "url(/images/about-chef.jpg)",
                 }}
               ></div>
             </div>
