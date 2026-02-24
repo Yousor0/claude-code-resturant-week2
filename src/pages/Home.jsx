@@ -21,7 +21,7 @@ function Home() {
             <Link to="/menu" className="btn btn-primary">
               View Our Menu
             </Link>
-            <Link to="/contact" className="btn btn-outline">
+            <Link to="/booking" className="btn btn-outline">
               Reserve a Table
             </Link>
           </div>

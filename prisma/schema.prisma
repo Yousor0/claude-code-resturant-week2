@@ -1,0 +1,49 @@
+generator client {
+  provider   = "prisma-client"
+  output     = "../generated/prisma"
+  engineType = "client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Restaurant {
+  id        Int        @id @default(autoincrement())
+  name      String
+  createdAt DateTime   @default(now())
+  timeSlots TimeSlot[]
+  bookings  Booking[]
+}
+
+model TimeSlot {
+  id           Int        @id @default(autoincrement())
+  restaurantId Int
+  slotTime     String
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+  bookings     Booking[]
+
+  @@unique([restaurantId, slotTime])
+}
+
+model Booking {
+  id               Int           @id @default(autoincrement())
+  restaurantId     Int
+  userId           Int
+  timeSlotId       Int
+  date             DateTime      @db.Date
+  partySize        Int
+  status           BookingStatus @default(pending)
+  confirmationCode String        @unique
+  createdAt        DateTime      @default(now())
+  restaurant       Restaurant    @relation(fields: [restaurantId], references: [id])
+  timeSlot         TimeSlot      @relation(fields: [timeSlotId], references: [id])
+
+  @@index([restaurantId, timeSlotId, date])
+}
+
+enum BookingStatus {
+  pending
+  confirmed
+  cancelled
+}
