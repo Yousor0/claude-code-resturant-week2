@@ -1,16 +1,79 @@
-# React + Vite
+# Golden Dragon
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
 
-Currently, two official plugins are available:
+Golden Dragon is a restaurant website for an authentic Chinese cuisine dining experience. The site features a full menu, gallery, about page, contact information, and an online table reservation system backed by a live database.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Golden Dragon Preview](previews/Animation.gif)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Home — Hero section with navigation to menu and reservations
+2. Menu — Full menu with categorized dishes and descriptions
+3. Gallery — Photo gallery showcasing the restaurant and food
+4. About — Restaurant story, team, and values
+5. Contact — Location, hours, and contact form
+6. Booking — Online table reservation form with database persistence
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19
+- React Router DOM
+- Vite
+- Express
+- Prisma (PostgreSQL)
+- Framer Motion
+- Font Awesome
+
+## Getting Started
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Yousor0/week2-resturant.git
+cd week2-resturant
+
+# Install dependencies
+npm install
+
+# Set up your environment variables
+cp .env.example .env
+# Add your DATABASE_URL to .env
+
+# Run Prisma migrations
+npx prisma migrate dev
+
+# Start the development server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+## Deployment
+
+Golden Dragon can be deployed on [Vercel](https://vercel.com). The live site is available at:
+
+<!-- Replace with your actual Vercel deployment URL -->
+
+**[https://week2-resturant.vercel.app](https://week2-resturant.vercel.app)**
+
+### Deploy Your Own
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/week2-resturant)
+
+Or manually via the Vercel CLI:
+
+```bash
+npm install -g vercel
+vercel
+```
+
+Vercel will auto-detect the Vite project and configure the build settings. Every push to `main` triggers a new production deployment. Make sure to add your `DATABASE_URL` environment variable in the Vercel project settings.

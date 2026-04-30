@@ -24,6 +24,7 @@ export default function BookingForm() {
   const [error, setError] = useState(null);
   const [cancelCode, setCancelCode] = useState("");
   const [cancelBookingId, setCancelBookingId] = useState(null);
+  const [hoveredBtn, setHoveredBtn] = useState(null);
 
   const today = new Date().toISOString().split("T")[0];
   const selectedSlot = TIME_SLOTS.find((s) => s.id === timeSlotId);
@@ -250,18 +251,33 @@ export default function BookingForm() {
               <button
                 style={{
                   ...s.primaryBtn,
-                  background: "#C41E24",
-                  opacity: loading ? 0.5 : 1,
+                  ...(loading
+                    ? s.primaryBtnDisabled
+                    : hoveredBtn === "delete"
+                      ? s.deleteBtnHover
+                      : { background: "#C41E24" }),
                   cursor: loading ? "not-allowed" : "pointer",
                 }}
                 disabled={loading}
+                onMouseEnter={() => {
+                  if (!loading) setHoveredBtn("delete");
+                }}
+                onMouseLeave={() => setHoveredBtn(null)}
                 onClick={handleConfirmCancel}
               >
                 {loading ? "Cancelling..." : "Confirm Cancellation"}
               </button>
             )}
 
-            <button style={s.ghostBtn} onClick={handleReset}>
+            <button
+              style={{
+                ...s.ghostBtn,
+                ...(hoveredBtn === "ghost-back" ? s.ghostBtnHover : {}),
+              }}
+              onMouseEnter={() => setHoveredBtn("ghost-back")}
+              onMouseLeave={() => setHoveredBtn(null)}
+              onClick={handleReset}
+            >
               ← Back to Booking
             </button>
           </div>
@@ -310,7 +326,12 @@ export default function BookingForm() {
               Make Another Booking
             </button>
             <button
-              style={s.ghostBtn}
+              style={{
+                ...s.ghostBtn,
+                ...(hoveredBtn === "ghost-cancel" ? s.ghostBtnHover : {}),
+              }}
+              onMouseEnter={() => setHoveredBtn("ghost-cancel")}
+              onMouseLeave={() => setHoveredBtn(null)}
               onClick={() => {
                 setScreen("cancel");
                 setCancelCode(booking.confirmationCode);
@@ -411,10 +432,18 @@ export default function BookingForm() {
             <button
               style={{
                 ...s.primaryBtn,
-                opacity: !date || loading ? 0.5 : 1,
+                ...(!date || loading
+                  ? s.primaryBtnDisabled
+                  : hoveredBtn === "check"
+                    ? s.primaryBtnHover
+                    : {}),
                 cursor: !date || loading ? "not-allowed" : "pointer",
               }}
               disabled={!date || loading}
+              onMouseEnter={() => {
+                if (!(!date || loading)) setHoveredBtn("check");
+              }}
+              onMouseLeave={() => setHoveredBtn(null)}
               onClick={handleCheckAvailability}
             >
               {loading ? "Checking..." : "Check Availability"}
@@ -435,7 +464,15 @@ export default function BookingForm() {
             </button>
           )}
 
-          <button style={s.ghostBtn} onClick={() => setScreen("cancel")}>
+          <button
+            style={{
+              ...s.ghostBtn,
+              ...(hoveredBtn === "ghost-existing" ? s.ghostBtnHover : {}),
+            }}
+            onMouseEnter={() => setHoveredBtn("ghost-existing")}
+            onMouseLeave={() => setHoveredBtn(null)}
+            onClick={() => setScreen("cancel")}
+          >
             Cancel an existing booking
           </button>
         </div>
@@ -619,7 +656,19 @@ const s = {
     fontFamily: "'Inter', sans-serif",
     fontWeight: 600,
     cursor: "pointer",
-    transition: "opacity 0.2s",
+    transition: "background 0.2s, box-shadow 0.2s, color 0.2s",
+  },
+  primaryBtnHover: {
+    background: "#d42028",
+    boxShadow: "0 0 0 1px rgba(245, 197, 24, 0.35)",
+  },
+  primaryBtnDisabled: {
+    background: "#2a2a2a",
+    color: "#555",
+  },
+  deleteBtnHover: {
+    background: "#a01820",
+    boxShadow: "0 0 0 1px rgba(196, 30, 36, 0.6)",
   },
   ghostBtn: {
     background: "transparent",
@@ -632,7 +681,11 @@ const s = {
     textTransform: "uppercase",
     fontFamily: "'Inter', sans-serif",
     cursor: "pointer",
-    transition: "all 0.2s",
+    transition: "border-color 0.2s, color 0.2s",
+  },
+  ghostBtnHover: {
+    border: "1px solid rgba(255,255,255,0.25)",
+    color: "#ccc",
   },
   codeBox: {
     background: "#111",
